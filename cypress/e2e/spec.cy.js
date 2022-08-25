@@ -102,7 +102,7 @@ describe('Demo QA page testing', () => {
       });
       // - Validate that the values are in order - One, Two, Three, Four, Five, Six
       // clumsy way but works
-      it.only('Sortable page testing', () => {
+      it('Sortable page testing', () => {
         SortablePage.firstItem.should('have.text', 'One');
         SortablePage.secondItem.should('have.text', 'Two');
         SortablePage.thirdItem.should('have.text', 'Three');
