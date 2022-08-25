@@ -1,3 +1,4 @@
+
 import BasePage from "./basePage";
 
 class PracticeFormPage extends BasePage {
@@ -35,7 +36,7 @@ class PracticeFormPage extends BasePage {
     }
 
     static get dateSelectorCalendar(){
-        return cy.get(':nth-child(5) > .react-datepicker__day--029')
+        return cy.get('.react-datepicker__day').not('.react-datepicker__day--outside-month')
     }
 
     static get subjectsField(){
@@ -54,9 +55,17 @@ class PracticeFormPage extends BasePage {
         return cy.get('#state')
     }
 
-    // static get stateDropDown(){
-    //     return cy.get('.react-select-3-input')
-    // }
+    static get stateDropDown(){
+        return cy.get('#stateCity-wrapper')
+    }
+
+    static get stateFirstChoice(){
+        return cy.get('#react-select-3-option-0')
+    }
+    
+    static get cityFirstChoice(){
+        return cy.get('#react-select-4-option-0')
+    }
 
     static get citySelector(){
         return cy.get('#city')
@@ -100,6 +109,10 @@ class PracticeFormPage extends BasePage {
 
     static get addressCheck(){
         return cy.get('tbody > :nth-child(9)')
+    }
+
+    static get stateCityCheck(){
+        return cy.get('tbody > :nth-child(10)')
     }
 }
 
