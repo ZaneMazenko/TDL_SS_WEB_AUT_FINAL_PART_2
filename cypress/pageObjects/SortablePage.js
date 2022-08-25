@@ -30,6 +30,9 @@ class SortablePage extends BasePage{
         return cy.get('.vertical-list-container > :nth-child(6)')
     }
 
+    static get listItems(){
+        return cy.get('.vertical-list-container.mt-4')
+    }
 }
 
 export default SortablePage

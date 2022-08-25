@@ -7,10 +7,8 @@ describe('Demo QA page testing', () => {
       cy.visit('https://demoqa.com/automation-practice-form')
     });
     //Scenario 1 - ( https://demoqa.com/automation-practice-form ) Forms - Practice forms
-    
-  
 
-    it.only('Forms - Practice forms', () => {
+    it('Forms - Practice forms', () => {
       // function setMonth(mnth){ <- couldn't get to work
       //   PracticeFormPage.doBField.click();
       //   PracticeFormPage.monthSelectorCalendar.select(mnth);
@@ -102,10 +100,9 @@ describe('Demo QA page testing', () => {
       beforeEach(() => {
         cy.visit('https://demoqa.com/sortable')
       });
-      let values = ['One', 'Two', 'Three', 'Four', 'Five', 'Six'];
       // - Validate that the values are in order - One, Two, Three, Four, Five, Six
       // clumsy way but works
-      it('Sortable page testing', () => {
+      it.only('Sortable page testing', () => {
         SortablePage.firstItem.should('have.text', 'One');
         SortablePage.secondItem.should('have.text', 'Two');
         SortablePage.thirdItem.should('have.text', 'Three');
@@ -113,7 +110,19 @@ describe('Demo QA page testing', () => {
         SortablePage.fifthItem.should('have.text', 'Five');
         SortablePage.sixthItem.should('have.text', 'Six');
         // - Sort the values in following order - Six, Five, Four, Three, Two, One
+        // SortablePage.listItems <-- did not manage to crack this
+        // .contains('Five')
+        // .trigger('mousedown', { which: 1})
+        // .trigger('mousemove', {pageX: 0, pageY: 600 }, {force:true})
+        // .trigger('mouseup', { force: true });
+        // movePiece(SortablePage.fifthItem, 0, 600);
       // - Validate that the values are in order - Six, Five, Four, Three, Two, One
+        // SortablePage.firstItem.should('have.text', 'Six');
+        // SortablePage.secondItem.should('have.text', 'Five');
+        // SortablePage.thirdItem.should('have.text', 'Four');
+        // SortablePage.forthItem.should('have.text', 'Three');
+        // SortablePage.fifthItem.should('have.text', 'Two');
+        // SortablePage.sixthItem.should('have.text', 'One');
       })
     });
   
